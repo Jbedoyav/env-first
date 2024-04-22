@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+        "version": "0.2.0",
+        "configurations": [
+          {
+            "name": "Flutter: Brand1 Dev",
+            "request": "launch",
+            "type": "dart",
+            "args": ["--flavor", "brand1Dev", "--target", "lib/config/environments/main_development.dart"]
+          },
+          {
+            "name": "Flutter: Brand1 Prod",
+            "request": "launch",
+            "type": "dart",
+            "args": ["--flavor", "brand1Prod", "--target", "lib/config/environments/main_production.dart"]
+
+          },
+          {
+            "name": "Flutter: Brand1 Staging",
+            "request": "launch",
+            "type": "dart",
+            "args": ["--flavor", "brand1Staging", "--target", "lib/config/environments/main_staging.dart"]
+
+          },
+          {
+            "name": "Flutter: Brand2 Dev",
+            "request": "launch",
+            "type": "dart",
+            "args": ["--flavor", "brand2Dev", "--target", "lib/config/environments/main_development.dart"]
+
+          },
+          {
+            "name": "Flutter: Brand2 Prod",
+            "request": "launch",
+            "type": "dart",
+            "args": ["--flavor", "brand2Prod", "--target", "lib/config/environments/main_production.dart"]
+
+          },
+          {
+            "name": "Flutter: Brand2 Staging",
+            "request": "launch",
+            "type": "dart",
+            "args": ["--flavor", "brand2Staging", "--target", "lib/config/environments/main_staging.dart"]
+
+          }
+        ]
+      
+}
