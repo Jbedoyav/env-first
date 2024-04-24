@@ -1,25 +1,31 @@
-enum AppEnvironment { DEV, STAGING, PROD }
+enum AppEnvironment { DEV, STAGING, PROD } //environments
 
-enum Brand { BRAND1, BRAND2 }
+enum Brand { BRAND1, BRAND2 } // brand
 
 class EnvInfo {
   static AppEnvironment _environment = AppEnvironment.DEV;
   static Brand _brand = Brand.BRAND1;
 
-  static void initialize(AppEnvironment environment) {
-    _environment = environment;
-    _brand = _getBrandFromFlavor();
+  // Initialize app according flavor set up
+  static void initializeFromFlavor(AppEnvironment environment) {
+    Brand brand = _getBrandFromFlavor();
+    initialize(environment, brand);
   }
 
+  //Initialize app
+  static void initialize(AppEnvironment environment, Brand brand) {
+    _environment = environment;
+    _brand = brand;
+  }
+
+  //get flavor name
   static Brand _getBrandFromFlavor() {
-    // Logic to determine brand based on flavor
-    String flavor = String.fromEnvironment('FLAVOR', defaultValue: '');
+    const String flavor = String.fromEnvironment('FLUTTER_APP_FLAVOR');
     if (flavor.startsWith('brand1')) {
       return Brand.BRAND1;
     } else if (flavor.startsWith('brand2')) {
       return Brand.BRAND2;
     } else {
-      // Default to BRAND1 if flavor doesn't match any known pattern
       return Brand.BRAND1;
     }
   }
@@ -33,6 +39,7 @@ class EnvInfo {
   static bool get isProduction => _environment == AppEnvironment.PROD;
 }
 
+//extensions
 extension _EnvProperties on AppEnvironment {
   static const _appTitles = {
     AppEnvironment.DEV: 'Dev',

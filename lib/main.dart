@@ -4,10 +4,11 @@ import 'package:two_by_one/config/flavor_banner.dart';
 
 void main() => mainCommon(AppEnvironment.PROD);
 
-Future<void> mainCommon(AppEnvironment environment) async {
+Future<void> mainCommon(
+  AppEnvironment environment,
+) async {
   WidgetsFlutterBinding.ensureInitialized();
-  EnvInfo.initialize(environment);
-
+  EnvInfo.initializeFromFlavor(environment);
   runApp(
     const MyApp(),
   );
